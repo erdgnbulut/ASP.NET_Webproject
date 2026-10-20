@@ -1,0 +1,42 @@
+@page
+@using GamersPC.Pages
+@model PaymentListModel
+
+	<h2>Payment Information Page</h2>
+    @if(Model?.PaymentList?.Items.Count() ==0){
+        <div class="alert alert-warning">There is empty.</div>
+
+        }
+    else{
+         <table class="table">
+            <tbody>
+                    @foreach (var item in Model?.PaymentList?.Items ?? Enumerable.Empty<PaymentListItem>()){
+                    <tr>
+                        <td><img src="@Url.Action("GetImage", new {id = item.Game.GameId})" height="100px" width="auto"></td>
+                        <td>@item.Game.GameName</td>
+                        <td>@item.Game.GamePrice</td>
+                        <td>
+                           <form method="post" asp-page-handler="Remove">
+                            <input type="hidden" name="GameId" value="@item.Game.GameId">
+                            <button type="submit" class="btn btn-sm-btn-danger">Delete</button>
+
+                           </form>
+
+                        </td>
+                    </tr>
+                    }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>@Model?.PaymentList?.Total()</td>
+                </tr>
+            </tfoot>
+        </table>
+
+    }        
+        <div class="text-center">
+        <a href="/" class="btn btn-primary">Store</a> 
+        <a class="btn btn-primary" asp-controller="Order" asp-action="CheckOut">BUY</a>
+        </div>
+

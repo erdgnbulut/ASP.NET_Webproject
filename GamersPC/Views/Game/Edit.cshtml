@@ -1,0 +1,47 @@
+@model Game
+
+<form asp-controller="Game" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="GameName" class="form-label">Game Name</label>
+        <input asp-for="GameName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GamePublisher" class="form-label">Game Publisher</label>
+        <input asp-for="GamePublisher" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GameDeveloper" class="form-label">Game Developer</label>
+        <input asp-for="GameDeveloper" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GameDiscription" class="form-label">Game Discription</label>
+        <input asp-for="GameDiscription" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GameTrailerPath" class="form-label">Game TrailerPath</label>
+        <input asp-for="GameTrailerPath" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="MetaCriticScore" class="form-label">MetaCritic Score</label>
+        <input asp-for="MetaCriticScore" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GameTopListNo" class="form-label">Game Top List No</label>
+        <input asp-for="GameTopListNo" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GamePopularityNo" class="form-label">Game Popularity No</label>
+        <input asp-for="GamePopularityNo" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GamePrice" class="form-label">Game Price</label>
+        <input asp-for="GamePrice" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="GameReleaseDate" class="form-label">Game ReleaseDate</label>
+        <input asp-for="GameReleaseDate" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Save</button>
+    
+</form>

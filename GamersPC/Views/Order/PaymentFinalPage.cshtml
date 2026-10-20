@@ -1,0 +1,17 @@
+
+@using GamersPC
+<div class="text-center mb-2">
+	<h3>The payment is completed (#@OrderId)</h3>
+	<p>Thank you for your payment.Have a good day.</p>
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<button>
+				<a href="/" class="btn btn-primary">Home</a>
+			</button>
+		</div>
+	</div>
+</div>
+@functions{
+    [BindProperty(SupportsGet = true)]
+    public string? OrderId {get; set;}
+}

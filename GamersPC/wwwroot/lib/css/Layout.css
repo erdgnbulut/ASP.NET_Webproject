@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.body{
+    width: 100% !important;
+}
+.container-fluid{
+    width: 100% !important;
+    padding: 0 0 !important;
+}
+.row{
+    margin: 0 !important;
+}
+.col-md-5[name="logo"]{
+    padding-left: 70px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.col-md-5[name="logo"] p{
+    padding-left: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+.row[name="navbar"]{
+    position: relative;
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row[name="navbar"] ul{
+    float: right;
+}
+.row[name="navbar"] ul li{
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    border: 2px;
+    border-radius: 5px;
+    top: 10px;
+    margin: 0 3px;
+    padding: 0px 5px;
+    background-color: rgb(22, 22, 22);
+}
+.row[name="navbar"] ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.row[name="navbar"] ul li:hover{
+    background-color: #10B981;
+}
+.row[name="pagebody"]{
+    color: white;
+    background-color: rgb(44, 43, 43);
+}
+.row[name="footer"]{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(34, 34, 34);
+}
+.row[name="footer"] p{
+    top: 40px;
+    position: relative;
+    color: white;
+    text-align: left;
+    font-size: 20px;
+}
+.icons{
+    position: relative;
+    padding-top: 40px;;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+}
+.icons i{
+    padding-right: 30px;
+    color: gray;
+    transition: 0.5s;
+}
+.icons a{
+    text-decoration: none;
+}
+.fa-solid.fa-house.fa-3x:hover{
+    color: white;
+}
+.fa-brands.fa-youtube.fa-3x:hover{
+    color: red;
+}
+.fa-brands.fa-twitter.fa-3x:hover{
+    color: aqua;
+}
+.fa-brands.fa-instagram.fa-3x:hover{
+    color: pink;
+}
+.fa-brands.fa-tiktok.fa-3x:hover{
+    color: rgb(66, 66, 66);
+}
+.fa-solid.fa-envelope.fa-3x:hover{
+    color: green;
+}

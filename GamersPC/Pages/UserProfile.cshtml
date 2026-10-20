@@ -1,0 +1,46 @@
+@page
+@model UserProfileModel
+
+<head>
+    <link rel="stylesheet" href="~/lib/css/UserProfile.css" />
+</head>
+<div class="row" name="profile">
+    <div class="col-md-2" id="site-background">
+
+    </div>
+    <div class="col-md-8">
+        <div class="row" name="topic">
+            <div class="col-md-4">
+                <img src="@Url.Action("GetImage", "User", new {id = Model.CurrentUser.Id})" height="150px"
+                    width="150px">
+            </div>
+            <div class="col-md-4" name="info">
+                <h6>@Model.CurrentUser.UserNickname</h6>
+                <p>@Model.CurrentUser.FullName</p>
+            </div>
+            <div class="col-md-4" name="button">
+                <a asp-page="/UserEdit" class="btn btn-primary">Edit Profile</a>
+            </div>
+        </div>
+        <div class="row" id="usersgames">
+            <div class="col-md-12">
+                <h4> Games </h4>
+                <ul>
+                    @foreach (var item in Model.UserGames)
+                    {
+                        <li>
+                            <div class="row" name="listedgame">
+                                <div class="col-md-5">
+                                    <img src="@Url.Action("GetImage", new {id = item.GamesId})" height="100px" width="auto">
+                                </div>
+                                <div class="col-md-7">
+                                    <p>@item.Game.GameName</p>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

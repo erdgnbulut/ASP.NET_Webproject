@@ -1,0 +1,29 @@
+.row{
+    width: 100% !important;
+    padding: 0 0 !important;
+}
+.col-md-6 h4{
+    padding-top: 10px;
+    text-align: center;
+}
+.col-md-6 li{
+    margin: 5px;
+    list-style-type: none;
+}
+.col-md-6 .row[name="listedgames"]{
+    margin-block: 5px !important;
+    cursor: pointer;
+    background-color: #212121;
+    align-items: center;
+}
+.col-md-6 .row[name="listedgames"]:hover{
+    border: 2px solid #10B981;
+    border-collapse: collapse ;
+    background-color: #232323;
+}
+.col-md-6 .row .col-md-2{
+    padding-left: 0 !important;
+}
+.col-md-6 .row .col-md-3{
+    text-align: center;
+}

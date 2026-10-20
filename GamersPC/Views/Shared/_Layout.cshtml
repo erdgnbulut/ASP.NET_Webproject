@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/css/Layout.css" />
+    <script src="https://kit.fontawesome.com/2f863d5d6a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row" name="navbar">
+                <div class="col-md-5" name="logo">
+                    <img src="~/lib/images/logo.jpg" class="logo" height="50px" width="auto" />
+                    <p>PC GAMERS</p>
+                </div>
+                <div class="col-md-7">
+                    <ul>
+                        @if (User.Identity?.IsAuthenticated == false)
+                        {
+                            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-controller="Home" asp-action="Store">Store</a></li>
+                            <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                            <li><a asp-controller="User" asp-action="Signup">Sign Up</a></li>
+                        }
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            if (User.IsInRole("admin"))
+                            {
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Home" asp-action="Store">Store</a></li>
+                                <li><a asp-controller="User" asp-action="Index">Users</a></li>
+                                <li><a asp-controller="Roles" asp-action="Index">Roles</a></li>
+                                <li><a asp-controller="Game" asp-action="Index">Add Game</a></li>
+                                <li><a asp-page="/UserProfile">@User.Identity.Name</a></li>
+                                <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+                            }
+                            else if (User.IsInRole("member"))
+                            {
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="Home" asp-action="Store">Store</a></li>
+                                <li><a asp-controller="Wishlist" asp-action="Index">Wishlist</a></li>
+                                <li><a asp-page="/UserProfile">@User.Identity.Name</a></li>
+                                <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row" name="pagebody">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" name="footer">
+            <div class="col-md-6">
+                <p>Copyright Text</p>
+            </div>
+            <div class="col-md-6">
+                <div class="icons">
+                    <a asp-controller="Home" asp-action="Index">
+                        <i class="fa-solid fa-house fa-3x"></i>
+                    </a>
+                    <a href="https://www.youtube.com">
+                        <i class="fa-brands fa-youtube fa-3x"></i>
+                    </a>
+                    <a href="https://www.twitter.com">
+                        <i class="fa-brands fa-twitter fa-3x"></i>
+                    </a>
+                    <a href="https://www.instagram.com">
+                        <i class="fa-brands fa-instagram fa-3x"></i>
+                    </a>
+                    <a href="https://www.tiktok.com">
+                        <i class="fa-brands fa-tiktok fa-3x"></i>
+                    </a>
+                    <a href="https://www.gmail.com">
+                        <i class="fa-solid fa-envelope fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

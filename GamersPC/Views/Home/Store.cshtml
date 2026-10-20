@@ -1,0 +1,34 @@
+@model IEnumerable<Game>
+
+<head>
+    <link rel="stylesheet" href="~/lib/css/Store.css" />
+</head>
+<div class="col-md-2">
+
+</div>
+<div class="col-md-8" name="Store">
+    <h4> Games </h4>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.GameId">
+                    <div class="row" name="listedgame">
+                        <div class="col-md-4">
+                            <img src="@Url.Action("GetImage", new {id = item.GameId})" height="100px" width="auto">
+                        </div>
+                        <div class="col-md-5">
+                            <p>@item.GameName</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>@item.GamePrice$</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+<div class="col-md-2">
+
+</div>

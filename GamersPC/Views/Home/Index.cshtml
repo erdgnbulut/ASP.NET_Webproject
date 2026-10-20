@@ -1,0 +1,38 @@
+@model IEnumerable<Game>
+
+<head>
+    <link rel="stylesheet" href="~/lib/css/Home.css" asp-append-version="true" />
+</head>
+
+<div class="col-md-6" name="toplist">
+    <h4>Top Games List</h4>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="row" name="listedgames">
+                <div class="col-md-1"></div>
+                <div class="col-md-1">@Html.DisplayFor(modelItem => item.GameTopListNo)</div>
+                <div class="col-md-4"><img src="@Url.Action("GetImage", new {id = item.GameId})" height="60px" width="auto">
+                </div>
+                <div class="col-md-5">@Html.DisplayFor(modelItem => item.GameName)</div>
+                <div class="col-md-1">@Html.DisplayFor(modelItem => item.MetaCriticScore)</div>
+            </div>
+        }
+    </div>
+</div>
+<div class="col-md-6" name=popularList>
+    <h4>Popular Games List</h4>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="row" name="listedgames">
+                <div class="col-md-1"></div>
+                <div class="col-md-1">@Html.DisplayFor(modelItem => item.GamePopularityNo)</div>
+                <div class="col-md-5"><img src="@Url.Action("GetImage", new {id = item.GameId})" height="60px" width="auto">
+                </div>
+                <div class="col-md-4">@Html.DisplayFor(modelItem => item.GameName)</div>
+                <div class="col-md-1"></div>
+            </div>
+        }
+    </div>
+</div>

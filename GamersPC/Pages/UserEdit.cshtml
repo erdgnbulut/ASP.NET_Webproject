@@ -1,0 +1,29 @@
+@page
+@model UserEditModel
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<div class="container mt-5">
+    <h2>Edit Profile</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="NickName">NickName</label>
+            <input type="text" id="NickName" name="NickName" class="form-control" value="@Model.NickName" />
+        </div>
+        <div class="form-group">
+            <label for="FullName">Full Name</label>
+            <input type="text" id="FullName" name="FullName" class="form-control" value="@Model.FullName" />
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" />
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber">Phone Number</label>
+            <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-page="/UserProfile" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

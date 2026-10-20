@@ -1,0 +1,33 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.col-md-8{
+    padding-block: 20px;
+    background-color: #1d1d1d;;
+}
+.col-md-8 .row[name="topic"]{
+    padding-left: 100px;
+}
+.col-md-8 .col-md-4[name="info"]{
+    margin-top: 40px !important;
+}
+.col-md-8 .col-md-4[name="button"]{
+    margin-top: 40px !important;
+    align-items: center;
+    justify-content: center;
+}
+.col-md-12{
+    padding-top: 30px !important;
+}
+.col-md-12 h4 {
+    padding-bottom: 20px;
+    text-align: center !important;
+    text-transform: uppercase;
+}
+.col-md-12 .row[name="listedgame"]{
+    background-color: #151515;
+    margin-block: 10px !important;
+    align-items: center;
+}

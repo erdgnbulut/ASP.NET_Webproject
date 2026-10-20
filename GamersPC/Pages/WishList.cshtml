@@ -1,0 +1,36 @@
+@page
+@using GamersPC.Pages
+@model WishListModel
+
+<div class="wishList-container">
+    <h1 class="wishList-title">Wishlist Page</h1>
+
+    
+    
+        <div class="games-grid">
+            @foreach (var item in Model?.WishList?.Items ?? Enumerable.Empty<WishListItem>())
+            {
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="@Url.Action("GetImage", new {id = item.Game.GameId})"/>
+                    </div>
+                    <div class="game-details">
+                        <h2 class="game-title">@item.Game.GameName</h2>
+                        <p class="game-price">
+                            Price: @(item.Game.GamePrice.HasValue ? $"${item.Game.GamePrice:F2}" : "Free")
+                        </p>
+                        <div class="game-buttons">
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Game.GameId" class="btn btn-green">View Details</a>
+                        </div>
+                        <form method="post" asp-page-handler="Remove">
+                            <input type="hidden" name="GameId" value="@item.Game.GameId">
+                            <button type="submit" class="btn btn-sm-btn-danger">Delete</button>
+
+                           </form>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+</div>

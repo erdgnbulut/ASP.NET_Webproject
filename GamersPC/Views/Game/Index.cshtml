@@ -1,0 +1,39 @@
+@model IEnumerable<Game>
+
+<head>
+    <link rel="stylesheet" href="~/lib/css/GameIndex.css" />
+</head>
+
+<div class="col-md-2">
+
+</div>
+<div class="col-md-8" name="Store">
+    <a class="btn btn-primary" asp-controller ="Game" asp-action="Create">Add New Game</a>
+    <h4> Games </h4>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                    <div class="row" name="listedgame">
+                        <div class="col-md-4">
+                            <img src="@Url.Action("GetImage", new {id = item.GameId})" height="100px" width="auto">
+                        </div>
+                        <div class="col-md-5">
+                            <p>@item.GameName</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a asp-action="Edit" asp-route-id="@item.GameId" class="btn btn-primary btn-sm">Edit</a>
+                            <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure?')"
+                                style="display: inline;">
+                                <input type="hidden" value="@item.GameId" name="id">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+            </li>
+        }
+    </ul>
+</div>
+<div class="col-md-2">
+
+</div>

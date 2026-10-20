@@ -1,0 +1,39 @@
+@model Game
+
+<div class="store-container">
+    <h1 class="store-title">Game Store</h1>
+
+    <div class="games-grid">
+
+        <div class="game-image">
+            <img src="@Url.Action("GetImage", "Home", new { id = @Model.GameId })" alt="Game Image"
+                style="width: 100%; height: auto;" />
+        </div>
+
+        <div class="game-card" style="width: 250%">
+
+            <div class="game-details">
+                <h2 class="game-title">@Model.GameName</h2>
+                <p class="game-description">@Model.GameDiscription</p>
+                <p class="game-price">
+                    Price: @(Model.GamePrice.HasValue ? $"${@Model.GamePrice:F2}" : "Free")
+                </p>
+                <p class="game-release">
+                    Release Date: @Model.GameReleaseDate?.ToString("yyyy-MM-dd")
+                </p>
+            </div>
+             <form asp-page="/PaymentList" method="post">
+                    <input type="hidden" asp-for="@Model.GameId" name="GameId">
+                    <button type="submit" class="btn-btn-outline success">Buy Now</button>
+
+                </form>
+                <form asp-page="/WishList" method="post">
+                    <input type="hidden" asp-for="@Model.GameId" name="GameId">
+                    <button type="submit" class="btn-btn-outline success">Add Wishlist</button>
+
+                </form>
+        </div>
+
+    </div>
+
+</div>

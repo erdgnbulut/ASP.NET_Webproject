@@ -1,0 +1,40 @@
+.col-md-8[name="Store"] h4{
+    padding-top: 10px !important;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.col-md-8[name="Store"] .row{
+    cursor: pointer;
+    background-color: #2f2f2f;
+    align-items: center;
+}
+.col-md-8[name="Store"] a{
+    text-decoration: none;
+    color: white;
+}
+.col-md-8[name="Store"] .row[name="listedgame"]{
+    margin-block: 10px !important;
+    cursor: pointer;
+    background-color: #212121;
+    align-items: center;
+}
+.col-md-8[name="Store"] .row .col-md-4{
+    padding-left: 0 !important;
+}
+.col-md-8[name="Store"] .row .col-md-5{
+    padding-top: 15px;
+}
+.col-md-8[name="Store"] .row .col-md-3{
+    padding-top: 15px;
+}
+.col-md-8[name="Store"] .row[name="listedgame"]:hover{
+    border: 2px solid #10B981;
+    border-collapse: collapse ;
+    background-color: #232323;
+}
